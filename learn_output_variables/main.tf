@@ -16,7 +16,7 @@ provider "azurerm" {
 
 # Decalaring Local Variables
 locals {
-  resource_group_name = "learn-9766e06c-8f10-4b7f-b666-d711b5424107"
+  resource_group_name = "learn-e64d16ee-0545-488b-b7ed-e146cb0c5922"
   location            = "westus"
 }
 
