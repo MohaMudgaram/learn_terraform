@@ -1,0 +1,49 @@
+variable "resource_group_location" {
+  default     = "eastus"
+  description = "Location of the resource group."
+}
+
+variable "rg_name" {
+  type        = string
+  default     = "rg-avd-resources"
+  description = "Name of the Resource group in which to deploy service objects"
+}
+
+variable "workspace" {
+  type        = string
+  description = "Name of the Azure Virtual Desktop workspace"
+  default     = "AVD TF Workspace"
+}
+
+variable "hostpool" {
+  type        = string
+  description = "Name of the Azure Virtual Desktop host pool"
+  default     = "AVD-TF-HP"
+}
+
+variable "rfc3339" {
+  type        = string
+  default     = "2022-03-30T12:43:13Z"
+  description = "Registration token expiration"
+}
+
+variable "prefix" {
+  type        = string
+  default     = "avdtf"
+  description = "Prefix of the name of the AVD machine(s)"
+}
+
+variable "subnet_address" {
+  type        = list(any)
+  default     = ["10.0.0.0", "172.0.0.0"]
+  description = "Subnet Address Space"
+}
+
+variable "source_address" {
+  type = map(any)
+  default = {
+    "RDPRule"   = "167.220.255.0"
+    "MSSQLRule" = "167.220.255.0"
+  }
+  description = "Source Address Prefix"
+}
